@@ -10,9 +10,12 @@ on:
 jobs:
   wf2:
     uses: "./.github/workflows/wf2.yml"
+
   do-something:
     runs-on: ubuntu-latest
+    needs: ["wf2"]
     steps:
       - run: echo "Do something"
   wf3:
     uses: "./.github/workflows/wf3.yml"
+    needs: ["do-something"]
