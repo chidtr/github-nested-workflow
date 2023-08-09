@@ -1,0 +1,18 @@
+name: Deploy API
+
+on:
+  workflow_call:
+    inputs:
+      message:
+        required: true
+        type: string
+
+jobs:
+  wf2:
+    uses: "./.github/workflows/wf2.yml"
+  do-something:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Do something"
+  wf3:
+    uses: "./.github/workflows/wf3.yml"

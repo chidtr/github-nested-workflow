@@ -1,0 +1,11 @@
+name: Manual Trigger
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  wf1:
+    uses: "./.github/workflows/wf1.yml"
+    with:
+      message: "From Manual Trigger"

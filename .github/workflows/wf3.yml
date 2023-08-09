@@ -1,0 +1,11 @@
+name: Stop AWS runner
+
+on:
+  workflow_call:
+
+jobs:
+  start-runner:
+    name: Stop self-hosted EC2 runner
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Stop Runner"
